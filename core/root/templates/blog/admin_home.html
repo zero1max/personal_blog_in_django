@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Personal Blog</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="container">
+    <section class="blog-list admin">
+        <h1>Personal Blog <a href="{% url 'new_article' %}" class="add-btn">+ Add</a></h1>
+        <ul>
+            {% for article in articles %}
+            <li>
+                {{ article.title }}
+                <a href="{% url 'edit_article' article.id %}" class="edit-link">Edit</a>
+                <a href="{% url 'delete_article' article.id %}" class="delete-link">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+</body>
+</html>

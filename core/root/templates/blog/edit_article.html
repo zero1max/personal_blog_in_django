@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.id %}Update{% else %}New{% endif %} Article</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <main class="container">
+        <section class="article-form">
+            <h2>{% if form.instance.id %}Update Article{% else %}New Article{% endif %}</h2>
+            <form method="post">
+                {% csrf_token %}
+                <label for="id_title">Article Title</label>
+                {{ form.title }}
+                <label for="id_publishing_date">Publishing Date</label>
+                {{ form.publishing_date }}
+                <label for="id_content">Content</label>
+                {{ form.content }}
+                <button type="submit">{% if form.instance.id %}Update{% else %}Publish{% endif %}</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Article</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <main class="container">
+        <section class="article-form">
+            <h2>New Article</h2>
+            <form method="post">
+                {% csrf_token %}
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                
+                    {% if form.errors %}
+                        <ul>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                
+                    <button type="submit">Saqlash</button>
+                </form>
+                
+            </form>
+        </section>
+    </main>
+</body>
+</html>

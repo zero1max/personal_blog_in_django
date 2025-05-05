@@ -1,0 +1,7 @@
+<h2>{{ article.title }} maqolasini o‘chirishni xohlaysizmi?</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Ha, o‘chir</button>
+    <a href="{% url 'admin_home' %}">Bekor qilish</a>
+</form>

@@ -1,0 +1,188 @@
+/* Umumiy stillar */
+body {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* Sarlavha */
+h1, h2 {
+    font-size: 2em;
+    margin-bottom: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Maqolalar ro'yxati (Home va Admin sahifalari) */
+.blog-list, .article-detail, .article-form {
+    background: #fff;
+    border: 3px solid #222;
+    border-radius: 12px;
+    padding: 32px 28px;
+    min-width: 320px;
+    box-shadow: 2px 2px 8px #eee;
+}
+
+.blog-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.blog-list li {
+    margin-bottom: 14px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blog-list li a {
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: color 0.2s;
+}
+
+.blog-list li a:hover,
+.edit-link:hover,
+.delete-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.blog-list .date {
+    color: #b0b0b0;
+    font-size: 0.95em;
+    font-weight: normal;
+}
+
+.add-btn {
+    font-size: 1em;
+    background: #e0e0e0;
+    border-radius: 6px;
+    padding: 2px 10px;
+    text-decoration: none;
+    color: #222;
+    margin-left: 10px;
+}
+
+.edit-link, .delete-link {
+    font-size: 0.95em;
+    margin-left: 12px;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.2s;
+}
+
+.delete-link {
+    color: #e74c3c;
+}
+
+/* Maqola sahifasi (/article) */
+.article-detail {
+    flex: 2;
+}
+
+.article-detail .date {
+    color: #b0b0b0;
+    font-size: 1em;
+    margin-bottom: 18px;
+}
+
+.article-detail .content {
+    font-size: 1.1em;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* Admin sahifasi qo'shimcha stillari */
+.admin-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.admin-actions a {
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #333;
+}
+
+.admin-actions a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Forma stillari (/edit va /new) */
+.article-form label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.article-form input[type="text"],
+.article-form input[type="date"],
+.article-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #bbb;
+    border-radius: 6px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.article-form input:focus,
+.article-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.article-form button {
+    margin-top: 16px;
+    padding: 10px 24px;
+    font-size: 1.1em;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+}
+
+.article-form button:hover,
+.article-form button:focus {
+    background: #444;
+}
+
+/* Responsive dizayn */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .blog-list,
+    .article-detail,
+    .article-form {
+        flex: none;
+        width: 100%;
+        margin-bottom: 24px;
+    }
+}

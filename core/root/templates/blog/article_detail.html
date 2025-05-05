@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <main class="container">
+        <section class="article-detail">
+            <h2>{{ article.title }}</h2>
+            <p class="date">{{ article.published_date }}</p>
+            <div class="content">{{ article.content|linebreaks }}</div>
+        </section>
+    </main>
+</body>
+</html>
